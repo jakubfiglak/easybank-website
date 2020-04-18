@@ -1,0 +1,31 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["airbnb"],
+  "env": {
+    "jest": true
+  },
+  "globals": {
+    "document": true,
+    "window": true,
+    "localStorage": true,
+    "fetch": true
+  },
+  "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
+    "linebreak-style": 0,
+    "import/prefer-default-export": 0,
+    "react/state-in-constructor": 0,
+    "react/destructuring-assignment": 0,
+    "import/no-named-as-default": 0,
+    "import/no-named-as-default-member": 0,
+    "radix": 0
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"],
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  }
+}

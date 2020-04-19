@@ -17,7 +17,6 @@ const StyledWrapper = styled.nav`
   @media screen and (min-width: 992px) {
     padding: 3.2rem 8rem;
     max-height: 80px;
-    z-index: 999;
   }
 `;
 

@@ -7,7 +7,7 @@ const Paragraph = styled.p`
   ${({ small }) => small && css`
     font-size: ${({ theme }) => theme.fontSize.xxs};
     line-height: 1.38; 
-  `}
+  `};
 `;
 
 export default Paragraph;

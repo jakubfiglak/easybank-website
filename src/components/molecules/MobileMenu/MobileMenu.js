@@ -24,6 +24,7 @@ const StyledInnerWrapper = styled.div`
   background: ${({ theme }) => theme.colors.white};
   border-radius: 4px;
   transition: transform 0.3s;
+  z-index: 1000;
 `;
 
 const StyledMenuList = styled.ul`

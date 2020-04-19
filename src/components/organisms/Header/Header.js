@@ -9,7 +9,6 @@ import Paragraph from '../../atoms/Paragraph/Paragraph';
 import Button from '../../atoms/Button/Button';
 
 const StyledContainer = styled.header`
-  height: 100vh;
   max-width: 1440px;
   margin: 0 auto;
 `;

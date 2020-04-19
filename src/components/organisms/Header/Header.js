@@ -20,6 +20,7 @@ const StyledHero = styled.div`
   height: 350px;
   background: url(${MobilePattern}) no-repeat center center;
   background-size: 100%;
+  z-index: -1;
 
   @media screen and (min-width: 992px) {
     background: url(${DesktopPattern}) no-repeat;
@@ -61,10 +62,12 @@ const StyledContentWrapper = styled.div`
 const StyledWelcomeWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr;
+  margin-top: 68px;
 
   @media screen and (min-width: 992px) {
     grid-template-columns: 2fr 3fr;
     background: ${({ theme }) => theme.colors.veryLightGray};
+    margin-top: 80px;
   }
 `;
 

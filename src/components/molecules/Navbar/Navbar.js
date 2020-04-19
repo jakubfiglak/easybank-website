@@ -13,6 +13,11 @@ const StyledWrapper = styled.nav`
   align-items: center;
   padding: 2.4rem;
   max-height: 68px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: ${({ theme }) => theme.colors.white};
 
   @media screen and (min-width: 992px) {
     padding: 3.2rem 8rem;
@@ -63,7 +68,7 @@ const Navbar = () => {
         {!isMobileMenuVisible ? <Hamburger /> : <Close />}
       </MenuButton>
       <StyledButton>Request invite</StyledButton>
-      <MobileMenu open={isMobileMenuVisible} aria-hidden={!isMobileMenuVisible} />
+      <MobileMenu open={isMobileMenuVisible} aria-hidden={!isMobileMenuVisible} closeMenuFn={toggleMobileMenu} />
     </StyledWrapper>
   );
 };

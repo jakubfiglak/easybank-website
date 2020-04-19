@@ -12,6 +12,7 @@ const StyledWrapper = styled.div`
 
   @media screen and (min-width: 992px) {
     justify-items: start;
+    align-content: start;
     text-align: left;
   }
 `;

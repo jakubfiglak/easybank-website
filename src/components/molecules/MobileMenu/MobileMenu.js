@@ -44,13 +44,13 @@ const StyledMenuLink = styled.a`
   color: ${({ theme }) => theme.colors.primary};
 `;
 
-const MobileMenu = ({ open }) => (
+const MobileMenu = ({ open, closeMenuFn }) => (
   <StyledOuterWrapper open={open}>
     <StyledInnerWrapper open={open}>
       <StyledMenuList>
         {menuItems.map((item) => (
           <StyledMenuItem key={item}>
-            <StyledMenuLink href={`#${item}`}>{item}</StyledMenuLink>
+            <StyledMenuLink href={`#${item}`} onClick={closeMenuFn}>{item}</StyledMenuLink>
           </StyledMenuItem>
         ))}
       </StyledMenuList>
@@ -60,6 +60,7 @@ const MobileMenu = ({ open }) => (
 
 MobileMenu.propTypes = {
   open: PropTypes.bool.isRequired,
+  closeMenuFn: PropTypes.func.isRequired,
 };
 
 export default MobileMenu;

@@ -4,6 +4,7 @@ import GlobalStyle from '../theme/GlobalStyle';
 import { theme } from '../theme/Theme';
 import Header from '../components/organisms/Header/Header';
 import FeaturesSection from '../components/organisms/FeaturesSection/FeaturesSection';
+import ArticlesSection from '../components/organisms/ArticlesSection/ArticlesSection';
 
 const MainWrapper = styled.div`
   max-width: 1440px;
@@ -17,6 +18,7 @@ const IndexPage = () => (
       <Header />
       <main>
         <FeaturesSection />
+        <ArticlesSection />
       </main>
     </MainWrapper>
   </ThemeProvider>

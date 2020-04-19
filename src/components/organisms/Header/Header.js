@@ -10,6 +10,8 @@ import Button from '../../atoms/Button/Button';
 
 const StyledContainer = styled.header`
   height: 100vh;
+  max-width: 1440px;
+  margin: 0 auto;
 `;
 
 const StyledHero = styled.div`
@@ -19,22 +21,52 @@ const StyledHero = styled.div`
   height: 350px;
   background: url(${MobilePattern}) no-repeat center center;
   background-size: 100%;
+
+  @media screen and (min-width: 992px) {
+    background: url(${DesktopPattern}) no-repeat;
+    background-position: 10% center;
+    height: 100%;
+  }
 `;
 
 const StyledImg = styled.img`
   position: absolute;
-  width: 100%;
+  width: 375px;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
+
+  @media screen and (min-width: 992px) {
+    width: 732px;
+    left: 65%;
+    bottom: 0;
+  }
 `;
 
-const StyledWrapper = styled.div`
+const StyledContentWrapper = styled.div`
   display: grid;
   justify-items: center;
   text-align: center;
   gap: 1.6rem;
   margin: 4rem 2.4rem;
+
+  @media screen and (min-width: 992px) {
+    order: -1;
+    padding: 17rem 0;
+    margin-left: 16.5rem;
+    justify-items: start;
+    text-align: left;
+  }
+`;
+
+const StyledWelcomeWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @media screen and (min-width: 992px) {
+    grid-template-columns: 2fr 3fr;
+    background: ${({ theme }) => theme.colors.veryLightGray};
+  }
 `;
 
 const StyledButton = styled(Button)`
@@ -61,14 +93,16 @@ const Header = () => {
   return (
     <StyledContainer>
       <Navbar />
-      <StyledHero>
-        <StyledImg src={src} srcSet={srcSet} sizes={sizes} alt="" />
-      </StyledHero>
-      <StyledWrapper>
-        <MainHeading>Next generation digital banking</MainHeading>
-        <Paragraph>Take your financial life online. Your Easybank account will be a one-step-shop for spending, saving, budgeting, investing, and much more</Paragraph>
-        <StyledButton>Request invite</StyledButton>
-      </StyledWrapper>
+      <StyledWelcomeWrapper>
+        <StyledHero>
+          <StyledImg src={src} srcSet={srcSet} sizes={sizes} alt="" />
+        </StyledHero>
+        <StyledContentWrapper>
+          <MainHeading>Next generation digital banking</MainHeading>
+          <Paragraph>Take your financial life online. Your Easybank account will be a one-step-shop for spending, saving, budgeting, investing, and much more</Paragraph>
+          <StyledButton>Request invite</StyledButton>
+        </StyledContentWrapper>
+      </StyledWelcomeWrapper>
     </StyledContainer>
   );
 };

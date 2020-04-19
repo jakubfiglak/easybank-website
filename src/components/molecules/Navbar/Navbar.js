@@ -3,6 +3,9 @@ import styled from 'styled-components';
 import Logo from '../../../assets/icons/logo.inline.svg';
 import Hamburger from '../../../assets/icons/icon-hamburger.inline.svg';
 import Close from '../../../assets/icons/icon-close.inline.svg';
+import MobileMenu from '../MobileMenu/MobileMenu';
+import DesktopMenu from '../DesktopMenu/DesktopMenu';
+import Button from '../../atoms/Button/Button';
 
 const StyledWrapper = styled.nav`
   display: flex;
@@ -10,6 +13,12 @@ const StyledWrapper = styled.nav`
   align-items: center;
   padding: 2.4rem;
   max-height: 68px;
+
+  @media screen and (min-width: 992px) {
+    padding: 3.2rem 8rem;
+    max-height: 80px;
+    z-index: 999;
+  }
 `;
 
 const MenuButton = styled.button`
@@ -28,19 +37,34 @@ const MenuButton = styled.button`
   &:hover g {
     fill: ${({ theme }) => theme.colors.secondary}
   }
+
+  @media screen and (min-width: 992px) {
+    display: none;
+  }
+`;
+
+const StyledButton = styled(Button)`
+  @media screen and (max-width: 992px) {
+    display: none;
+  }
 `;
 
 const Navbar = () => {
   const [isMobileMenuVisible, setMobileMenuVisibility] = useState(false);
 
-  const toggleMobileMenu = () => setMobileMenuVisibility(!isMobileMenuVisible);
+  const toggleMobileMenu = () => {
+    setMobileMenuVisibility(!isMobileMenuVisible);
+  };
 
   return (
     <StyledWrapper>
       <Logo />
-      <MenuButton onClick={toggleMobileMenu}>
+      <DesktopMenu />
+      <MenuButton onClick={toggleMobileMenu} aria-expanded={isMobileMenuVisible} aria-label="Toggle mobile menu">
         {!isMobileMenuVisible ? <Hamburger /> : <Close />}
       </MenuButton>
+      <StyledButton>Request invite</StyledButton>
+      <MobileMenu open={isMobileMenuVisible} aria-hidden={!isMobileMenuVisible} />
     </StyledWrapper>
   );
 };

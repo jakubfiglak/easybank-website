@@ -11,6 +11,7 @@ const Button = styled.button`
   font-size: ${({ theme }) => theme.fontSize.xs};
   line-height: 2;
   transition: opacity 0.3s;
+  cursor: pointer;
 
   &:hover {
     opacity: 0.4;

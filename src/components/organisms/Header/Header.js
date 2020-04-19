@@ -20,12 +20,13 @@ const StyledHero = styled.div`
   height: 350px;
   background: url(${MobilePattern}) no-repeat center center;
   background-size: 100%;
-  z-index: -1;
+  /* z-index: -1; */
 
   @media screen and (min-width: 992px) {
     background: url(${DesktopPattern}) no-repeat;
     background-position: 10% center;
     height: 100%;
+    z-index: auto;
   }
 `;
 

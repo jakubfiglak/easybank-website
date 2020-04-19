@@ -15,7 +15,7 @@ const StyledArticlesWrapper = styled.div`
   gap: 2.4rem;
   margin-top: 3rem;
 
-  @media screen and (min-width: 992px) {
+  @media screen and (min-width: 768px) {
     grid-template-columns: repeat(4,1fr);
   }
 `;

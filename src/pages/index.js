@@ -5,6 +5,7 @@ import { theme } from '../theme/Theme';
 import Header from '../components/organisms/Header/Header';
 import FeaturesSection from '../components/organisms/FeaturesSection/FeaturesSection';
 import ArticlesSection from '../components/organisms/ArticlesSection/ArticlesSection';
+import Footer from '../components/organisms/Footer/Footer';
 
 const MainWrapper = styled.div`
   max-width: 1440px;
@@ -20,6 +21,7 @@ const IndexPage = () => (
         <FeaturesSection />
         <ArticlesSection />
       </main>
+      <Footer />
     </MainWrapper>
   </ThemeProvider>
 );

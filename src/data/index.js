@@ -5,6 +5,8 @@ import ApiIcon from '../assets/icons/icon-api.inline.svg';
 
 export const menuItems = ['home', 'about', 'contact', 'blog', 'careers'];
 
+export const footerMenuItems = ['about us', 'contact', 'blog', 'careers', 'support', 'privacy policy'];
+
 export const featureCardsContent = [
   {
     icon: BankingIcon,

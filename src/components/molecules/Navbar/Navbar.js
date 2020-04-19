@@ -15,9 +15,12 @@ const StyledWrapper = styled.nav`
   max-height: 68px;
   position: fixed;
   top: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
+  max-width: 1440px;
   background: ${({ theme }) => theme.colors.white};
+  z-index: 999;
 
   @media screen and (min-width: 992px) {
     padding: 3.2rem 8rem;

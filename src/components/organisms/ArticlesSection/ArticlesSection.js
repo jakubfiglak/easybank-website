@@ -26,6 +26,7 @@ const ArticlesSection = () => {
       allDatoCmsArticle {
         nodes {
           id
+          slug
           title
           author
           featuredImage {
@@ -44,7 +45,7 @@ const ArticlesSection = () => {
       <SectionHeading>Latest Articles</SectionHeading>
       <StyledArticlesWrapper>
         {nodes.map((node) => (
-          <ArticleCard key={node.id} author={node.author} title={node.title} text={node.articleContent} image={node.featuredImage.url} />
+          <ArticleCard key={node.id} author={node.author} title={node.title} text={node.articleContent} image={node.featuredImage.url} slug={node.slug} />
         ))}
       </StyledArticlesWrapper>
     </StyledWrapper>

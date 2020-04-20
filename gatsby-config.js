@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 module.exports = {
   siteMetadata: {
     title: 'Gatsby Default Starter',
@@ -30,6 +32,12 @@ module.exports = {
         rule: {
           include: /\.inline\.svg$/,
         },
+      },
+    },
+    {
+      resolve: 'gatsby-source-datocms',
+      options: {
+        apiToken: process.env.DATO_API_TOKEN,
       },
     },
   ],

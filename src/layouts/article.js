@@ -1,11 +1,9 @@
 import React from 'react';
-import styled, { ThemeProvider } from 'styled-components';
+import styled from 'styled-components';
 import { graphql, Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import { MainHeading } from '../components/atoms/Headings';
 import Paragraph from '../components/atoms/Paragraph/Paragraph';
-import { theme } from '../theme/Theme';
-import GlobalStyle from '../theme/GlobalStyle';
 
 export const query = graphql`
   query querySingleArticle($id: String!) {
@@ -25,6 +23,8 @@ const StyledWrapper = styled.article`
   flex-direction: column;
   place-items: center center;
   padding: 5rem;
+  max-width: 992px;
+  margin: 0 auto;
 `;
 
 const StyledImage = styled.img`
@@ -36,13 +36,13 @@ const StyledImage = styled.img`
 
 const StyledLink = styled(Link)`
   text-decoration: none;
-  color: hsl(233, 26%, 24%);
+  color: ${({ theme }) => theme.colors.primary};
   transition: all 0.3s;
   align-self: start;
   margin-top: 2rem;
 
   &:hover {
-    color: hsl(136, 65%, 51%);
+   color: ${({ theme }) => theme.colors.secondary};
   }
 `;
 
@@ -51,24 +51,32 @@ const ArticleLayout = ({ data }) => {
     title, author, featuredImage, articleContent,
   } = data.datoCmsArticle;
 
-  console.log(data);
-
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <StyledWrapper>
-        <MainHeading>{title}</MainHeading>
-        <Paragraph small>
-          Author:
-          {' '}
-          {author}
-        </Paragraph>
-        <StyledImage src={featuredImage.url} />
-        <Paragraph>{articleContent}</Paragraph>
-        <StyledLink to="/">Go back</StyledLink>
-      </StyledWrapper>
-    </ThemeProvider>
+    <StyledWrapper>
+      <MainHeading>{title}</MainHeading>
+      <Paragraph small>
+        Author:
+        {' '}
+        {author}
+      </Paragraph>
+      <StyledImage src={featuredImage.url} />
+      <Paragraph>{articleContent}</Paragraph>
+      <StyledLink to="/">Go back</StyledLink>
+    </StyledWrapper>
   );
+};
+
+ArticleLayout.propTypes = {
+  data: PropTypes.shape({
+    datoCmsArticle: PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      author: PropTypes.string.isRequired,
+      featuredImage: PropTypes.shape({
+        url: PropTypes.string.isRequired,
+      }).isRequired,
+      articleContent: PropTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
 };
 
 export default ArticleLayout;

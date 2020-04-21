@@ -13,17 +13,17 @@ const MainWrapper = styled.div`
 `;
 
 const IndexPage = () => (
-  <ThemeProvider theme={theme}>
-    <MainWrapper>
-      <GlobalStyle />
-      <Header />
-      <main>
-        <FeaturesSection />
-        <ArticlesSection />
-      </main>
-      <Footer />
-    </MainWrapper>
-  </ThemeProvider>
+  // <ThemeProvider theme={theme}>
+  <MainWrapper>
+    {/* <GlobalStyle /> */}
+    <Header />
+    <main>
+      <FeaturesSection />
+      <ArticlesSection />
+    </main>
+    <Footer />
+  </MainWrapper>
+  // </ThemeProvider>
 );
 
 export default IndexPage;

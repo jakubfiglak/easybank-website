@@ -1,7 +1,5 @@
 import React from 'react';
-import styled, { ThemeProvider } from 'styled-components';
-import GlobalStyle from '../theme/GlobalStyle';
-import { theme } from '../theme/Theme';
+import styled from 'styled-components';
 import Header from '../components/organisms/Header/Header';
 import FeaturesSection from '../components/organisms/FeaturesSection/FeaturesSection';
 import ArticlesSection from '../components/organisms/ArticlesSection/ArticlesSection';
@@ -13,9 +11,7 @@ const MainWrapper = styled.div`
 `;
 
 const IndexPage = () => (
-  // <ThemeProvider theme={theme}>
   <MainWrapper>
-    {/* <GlobalStyle /> */}
     <Header />
     <main>
       <FeaturesSection />
@@ -23,7 +19,6 @@ const IndexPage = () => (
     </main>
     <Footer />
   </MainWrapper>
-  // </ThemeProvider>
 );
 
 export default IndexPage;
